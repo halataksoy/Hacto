@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hizmet Ekle</h2>
+
+
+<script type="text/javascript">
+    CKEDITOR.replace('editor')
+</script>
+
+<div class="form">
+    <form class="form-validate form-horizontal text-uppercase my-auto"id="Create_Form" method="post" action="/Hizmet/Create/" enctype="multipart/form-data">
+        <!--enctype eklememizin sebebi resim yükleme işlemi yapacağımızdan-->
+        <div class="form-group  my-lg-4">
+            <label for="Baslik" class="control-label col-lg-2">Başlık <span class="required">*</span></label>
+            <div class="col-lg-10">
+                <input class="form-control" id="Baslik" name="Baslik" minlength="5" type="text" required />
+            </div>
+        </div>
+        <div class="form-group my-lg-4">
+            <label for="Aciklama" class="control-label col-lg-2">Açıklama <span class="required">*</span></label>
+            <div class="col-lg-10">
+                <textarea name="Aciklama" class="ckeditor" required></textarea>
+            </div>
+        </div>
+        <div class="form-group my-lg-4">
+            <label for="curl" class="control-label col-lg-2">Resim</label>
+            <div class="col-lg-10">
+                <input type="file" class="form-control " accept=".jpg,.png,.jpeg" name="ResimURL" />
+            </div>
+        </div>
+        <div class="form-group my-lg-4">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button class="btn btn-primary" type="submit">Kaydet</button>
+                <button class="btn btn-default" type="button"><a href="/Hizmet/Index">İptal</a></button>
+            </div>
+        </div>
+    </form>
+</div>
+
